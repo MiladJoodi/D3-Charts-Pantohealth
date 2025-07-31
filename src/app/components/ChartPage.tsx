@@ -7,39 +7,46 @@ type SinglePoint = [number, number | null]
 type MultiPoint = [number, (number | null)[]]
 
 type Chart = {
-  title: string
-  data: SinglePoint[] | MultiPoint[]
+    title: string
+    data: SinglePoint[] | MultiPoint[]
 }
 
 export function ChartPage() {
-  const [charts, setCharts] = useState<Chart[]>([])
-  const [error, setError] = useState<string | null>(null)
-  const [loading, setLoading] = useState<boolean>(true)
+    const [charts, setCharts] = useState<Chart[]>([])
+    const [error, setError] = useState<string | null>(null)
+    const [loading, setLoading] = useState<boolean>(true)
 
-  useEffect(() => {
-    async function fetchData() {
-      try {
-        const res = await fetch('/data.json')
-        if (!res.ok) throw new Error('Failed to load data')
-        const data = await res.json()
-        setCharts(data)
-      } catch (err: unknown) {
-        setError(err instanceof Error ? err.message : 'Unknown error');
-      } finally {
-        setLoading(false)
-      }
-    }
-    fetchData()
-  }, [])
+    useEffect(() => {
+        async function fetchData() {
+            try {
+                const res = await fetch('/data.json')
+                if (!res.ok) throw new Error('Failed to load data')
+                const data = await res.json()
+                setCharts(data)
+            } catch (err: unknown) {
+                setError(err instanceof Error ? err.message : 'Unknown error');
+            } finally {
+                setLoading(false)
+            }
+        }
+        fetchData()
+    }, [])
 
-  if (loading) return <p>Loading charts...</p>
-  if (error) return <p className="text-red-600">{error}</p>
+    if (loading)
+        return (
+            <div className="flex justify-center items-center h-32">
+                <div className="animate-spin rounded-full h-8 w-8 border-2 border-blue-500 border-t-transparent"></div>
+            </div>
+        )
 
-  return (
-    <>
-      {charts.map((chart, i) => (
-        <ChartRenderer key={i} chart={chart} />
-      ))}
-    </>
-  )
+
+    if (error) return <p className="text-red-600">{error}</p>
+
+    return (
+        <>
+            {charts.map((chart, i) => (
+                <ChartRenderer key={i} chart={chart} />
+            ))}
+        </>
+    )
 }
