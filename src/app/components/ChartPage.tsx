@@ -2,17 +2,11 @@
 
 import { useEffect, useState } from 'react'
 import { ChartRenderer } from './ChartRenderer'
-
-type SinglePoint = [number, number | null]
-type MultiPoint = [number, (number | null)[]]
-
-type Chart = {
-    title: string
-    data: SinglePoint[] | MultiPoint[]
-}
+import { LoadingChart } from './LoadingChart'
+import { ChartData } from './types'
 
 export function ChartPage() {
-    const [charts, setCharts] = useState<Chart[]>([])
+    const [charts, setCharts] = useState<ChartData[]>([])
     const [error, setError] = useState<string | null>(null)
     const [loading, setLoading] = useState<boolean>(true)
 
@@ -26,6 +20,7 @@ export function ChartPage() {
             } catch (err: unknown) {
                 setError(err instanceof Error ? err.message : 'Unknown error');
             } finally {
+                await new Promise(res => setTimeout(res, 1500)); //sleep
                 setLoading(false)
             }
         }
@@ -34,9 +29,7 @@ export function ChartPage() {
 
     if (loading)
         return (
-            <div className="flex justify-center items-center h-32">
-                <div className="animate-spin rounded-full h-8 w-8 border-2 border-blue-500 border-t-transparent"></div>
-            </div>
+            <LoadingChart />
         )
 
 

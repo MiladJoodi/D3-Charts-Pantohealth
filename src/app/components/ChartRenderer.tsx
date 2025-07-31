@@ -2,13 +2,7 @@
 
 import * as d3 from 'd3'
 import { useEffect, useRef } from 'react'
-
-type SinglePoint = [number, number | null]
-type MultiPoint = [number, (number | null)[]]
-type ChartData = {
-  title: string
-  data: SinglePoint[] | MultiPoint[]
-}
+import { ChartData, MultiPoint, SinglePoint } from './types'
 
 type Props = {
   chart: ChartData
