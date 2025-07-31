@@ -23,8 +23,8 @@ export function ChartPage() {
         if (!res.ok) throw new Error('Failed to load data')
         const data = await res.json()
         setCharts(data)
-      } catch (err: any) {
-        setError(err.message || 'Unknown error')
+      } catch (err: unknown) {
+        setError(err instanceof Error ? err.message : 'Unknown error');
       } finally {
         setLoading(false)
       }
