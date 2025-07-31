@@ -3,7 +3,7 @@
 This project is a simple chart visualization tool built with Next.js and D3.js.  
 It was created as a technical assignment for [Pantohealth](https://pantohealth.com/).
 
-👉 Try the live **[Demo](https://pantohealth.netlify.app/)** to see it in action
+👉 Try it live and check out the full experience in the **[Demo](https://pantohealth.netlify.app/)**.
 
 ## Features
 
