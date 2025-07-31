@@ -82,7 +82,6 @@ export function ChartRenderer({ chart }: Props) {
         .attr('stroke-width', 1.5)
         .attr('d', line)
 
-      // نقاط
       svg
         .selectAll('.dot')
         .data(cleanData)
@@ -177,7 +176,7 @@ export function ChartRenderer({ chart }: Props) {
 
   return (
     <div className="mb-8 relative">
-      <h2 className="text-lg font-semibold mb-2">{chart.title}</h2>
+      <h2 className="text-lg font-semibold mb-2">📉 {chart.title}</h2>
       <svg ref={svgRef} />
       <div
         ref={tooltipRef}
