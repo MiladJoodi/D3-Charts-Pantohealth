@@ -6,7 +6,15 @@ Data is loaded from [`/data.json`](./data.json) file served locally.
 
 👉 Try it live and check out the full experience in the **[Demo](https://pantohealth.netlify.app/)**.
 
+<p align="left">
+  <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/nextjs/nextjs-original.svg" alt="Next.js" width="40" height="40" />
+  <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/typescript/typescript-original.svg" alt="TypeScript" width="40" height="40" />
+  <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/d3js/d3js-original.svg" alt="D3.js" width="40" height="40" />
+  <img src="https://img.icons8.com/color/512/tailwind_css.png" alt="Tailwind CSS" width="45" height="45" />
+</p>
+
 ![Pantohealth Logo](https://s34.picofile.com/file/8486194184/p.png)
+
 
 ## Features
 
