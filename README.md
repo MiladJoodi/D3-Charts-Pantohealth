@@ -5,6 +5,8 @@ It was created as a technical assignment for [Pantohealth](https://pantohealth.c
 
 👉 Try it live and check out the full experience in the **[Demo](https://pantohealth.netlify.app/)**.
 
+![Pantohealth Logo](https://s34.picofile.com/file/8486194184/p.png)
+
 ## Features
 
 - Render single and multi-series line charts  
