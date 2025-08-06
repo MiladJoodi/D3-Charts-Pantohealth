@@ -1,7 +1,7 @@
 # 📊 Pantohealth Chart Renderer
 
 This project is a simple chart visualization tool built with **Next.js** and **D3.js**.  
-Data is loaded from [`/data.json`](./data.json) file served locally.
+Data is loaded from [`/data.json`](https://pantohealth.netlify.app/data.json) file served locally.
 
 👉 Try it live and check out the full experience in the **[Demo](https://pantohealth.netlify.app/)**.
 
